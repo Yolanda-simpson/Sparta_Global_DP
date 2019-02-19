@@ -12,4 +12,24 @@ namespace DependencyInjectionhwk
         {
         }
     }
+
+    public void cars (string message)
+    {
+        return car;
+    }
+
+
+    interface ICar
+    {
+
+    }
+
+    interface IEngineType 
+    {
+
+    }
+
+    interface ISize 
+
+    }
 }
