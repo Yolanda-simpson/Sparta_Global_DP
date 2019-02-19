@@ -10,26 +10,54 @@ namespace DependencyInjectionhwk
     {
         static void Main(string[] args)
         {
+          ICar cr = ChooseCar.carEngine("V16");
+            cr.revEngine();
         }
     }
 
-    public void cars (string message)
+  
+
+   public interface ICar
     {
-        return car;
+        void revEngine();
     }
 
-
-    interface ICar
+    public class EngineTypeV8 : ICar 
     {
-
+        public void revEngine()
+        {
+            Console.WriteLine("vroom");
+        }
     }
 
-    interface IEngineType 
+    public class EngineTypeV12 : ICar
     {
-
+        public void revEngine()
+        {
+            Console.WriteLine("VRoom");
+        }
     }
 
-    interface ISize 
-
+    public class EngineTypeV16 : ICar
+    {
+        public void revEngine()
+        {
+            Console.WriteLine("VROOOOOM");
+        }
+    }
+    class ChooseCar
+    {
+        public static  ICar carEngine(string ce)
+        {
+            if (ce == "V16")
+            {
+                return new EngineTypeV16();
+            }
+            else
+            {
+                return new EngineTypeV8();
+            }
+        }
     }
 }
+
